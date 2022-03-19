@@ -17,7 +17,7 @@ Road segmentation is significant in self-driving and mobile robot applications. 
 
 #### KITTI Road Dataset
 
-You may download the original images and annotations of on KITTI Road dataset from [KITTI](http://host.robots.ox.ac.uk/pascal/VOC/voc2010/VOCtrainval_03-May-2010.tar) and the depth images can be found in [SNE-RoadSeg](https://github.com/hlwang1124/SNE-RoadSeg). Then please setup dataset according to the following directory structure:
+You may download the original images and annotations of on KITTI Road dataset from [KITTI](http://www.cvlibs.net/datasets/kitti/eval_road.php) and the depth images can be found in [SNE-RoadSeg](https://github.com/hlwang1124/SNE-RoadSeg). Then please setup dataset according to the following directory structure:
 ```
 USNet
  |-- data
