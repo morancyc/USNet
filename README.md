@@ -11,6 +11,10 @@ Road segmentation is significant in self-driving and mobile robot applications. 
 <img src="img/usnet.png" width="95%"/>
 </p>
 
+<p align="center">
+<img src="img/KITTI.gif" width="95%"/>
+</p>
+
 
 ## Data Preparation
 
