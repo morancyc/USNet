@@ -120,17 +120,18 @@ class Kitti_Dataset(data.Dataset):
 
         useDir = "/".join(img_path.split('/')[:-2])
         name = img_path.split('/')[-1]
-        lbl_path = os.path.join(useDir, 'gt_image_2', name[:-10]+'road_'+name[-10:])
-
-        label_image = cv2.cvtColor(cv2.imread(lbl_path), cv2.COLOR_BGR2RGB)
-        oriHeight, oriWidth, _ = label_image.shape
-        label = np.zeros((oriHeight, oriWidth), dtype=np.uint8)
-        label[label_image[:, :, 2] > 0] = 1
-
+        
         _img = Image.open(img_path).convert('RGB')
         depth_image = cv2.imread(depth_path, cv2.IMREAD_ANYDEPTH)
         depth_image = depth_image.astype(np.float32)
+        oriHeight, oriWidth = depth_image.shape
         _depth = Image.fromarray(depth_image)
+
+        label = np.zeros((oriHeight, oriWidth), dtype=np.uint8)
+        if not self.split == 'testing':
+            lbl_path = os.path.join(useDir, 'gt_image_2', name[:-10] + 'road_' + name[-10:])
+            label_image = cv2.cvtColor(cv2.imread(lbl_path), cv2.COLOR_BGR2RGB)
+            label[label_image[:, :, 2] > 0] = 1
 
         _target = Image.fromarray(label)
 
@@ -154,17 +155,7 @@ class Kitti_Dataset(data.Dataset):
         normal = np.transpose(normal, [1, 2, 0])
         normal = cv2.resize(normal, (self.args.crop_width, self.args.crop_height))
 
-        # plt.figure()
-        # plt.subplot(211)
-        # plt.imshow(normal*255)
-        # # plt.show()
-
         normal = transforms.ToTensor()(normal)
-
-        # # plt.figure()
-        # plt.subplot(212)
-        # plt.imshow((normal*255).permute(1,2,0))
-        # plt.show()
 
         sample['depth'] = normal
 
@@ -177,7 +168,6 @@ class Kitti_Dataset(data.Dataset):
         sample['img_path'] = img_path
         sample['depth_path'] = depth_path
         sample['calib_path'] = calib_path
-        sample['lbl_path'] = lbl_path
         
         return sample
 
