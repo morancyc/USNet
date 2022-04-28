@@ -85,10 +85,10 @@ If you submit this result to the KITTI benchmark, you will get a MaxF score of *
 If you find USNet useful in your research, please consider citing:
 ```
 @inproceedings{Chang22Fast,
-title = {Fast Road Segmentation via Uncertainty-aware Symmetric Network},
+  title = {Fast Road Segmentation via Uncertainty-aware Symmetric Network},
   author = {Chang, Yicong and Xue, Feng and Sheng, Fei and Liang, Wenteng and Ming, Anlong},
-  booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
-  year={2022}
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  year = {2022}
 }
 ```
 
