@@ -156,7 +156,7 @@ class RandomGaussianNoise(object):
 class Resize(object):
     """Resize rgb and label images, while keep depth image unchanged. """
     def __init__(self, size):
-        self.size = size    # size: (h, w)
+        self.size = size    # size: (w, h)
 
     def __call__(self, sample):
         img = sample['image']
