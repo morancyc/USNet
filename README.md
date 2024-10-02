@@ -23,7 +23,7 @@ Here shows the segmentation result and the uncertainty map:
 
 #### KITTI Road Dataset
 
-You may download the original images and annotations of on KITTI Road dataset from [KITTI](http://www.cvlibs.net/datasets/kitti/eval_road.php) and the depth images can be found in [Google Drive](https://drive.google.com/file/d/12BvNsVgSZ5cEqetNhkkbrmdUAlADphAm/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1Y0pg85lLeVQADqRCAFk92A) (Code: k5vp). Then please setup dataset according to the following directory structure:
+You may download the KITTI Road dataset from [Google Drive](https://drive.google.com/file/d/12BvNsVgSZ5cEqetNhkkbrmdUAlADphAm/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1Y0pg85lLeVQADqRCAFk92A) (Code: k5vp). Then please setup dataset according to the following directory structure:
 ```
 USNet
  |-- data
